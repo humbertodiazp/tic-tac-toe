@@ -9,8 +9,16 @@ class Board
     end
 
     def game_board
-        puts "$#{player_answer}|$#{player_answer}|$#{player_answer}
-         $#{player_answer}|$#{player_answer}|$#{player_answer}"
+        x = 'x'
+        o = 'o'
+
+        puts "#{x}  |  #{o}  |  #{x}"
+        puts "_______________"
+        puts "#{o}  |  #{x}  |  #{o}" 
+        puts "_______________"
+        puts "#{o}  |  #{x}  |  #{x}" 
+        # puts "$#{player_answer}|$#{player_answer}|$#{player_answer}
+        #  $#{player_answer}|$#{player_answer}|$#{player_answer}"
     end
     
 end
