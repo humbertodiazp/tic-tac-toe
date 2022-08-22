@@ -8,6 +8,9 @@ class Board
     @player_2 = player_2
     end
 
+    #possibly add all of the below puts to an array that prints out like the board layout below
+    # then you can simply change the value of the array at a gien point to represent to x or o for tic/tac/toe
+
     def game_board
         x = 'x'
         o = 'o'
