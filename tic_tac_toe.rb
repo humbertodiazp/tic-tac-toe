@@ -1,5 +1,5 @@
 class Board 
-    
+    MOVES = [1,2,3,4,5,6,7,8,9]
     initialize()
     @player_options = player_options
     @player_1 = "Player One"
@@ -10,11 +10,12 @@ class Board
     # then you can simply change the value of the array at a gien point to represent to x or o for tic/tac/toe
 
     def game_board()
-        player_options = [1,2,3,4,5,6,7,8,9]
+        player_options = MOVES
         
         
         # determines where on the board to place an X or O based on player's decision 
         # subtract 1 from selection to match array indexing 
+        # consider moving this logic outside the game_board method. May need a new method. 
         selection == player_options[selection - 1] && player = player_1 ? 
         player_options[selection] = 'X' : player_options[selection - 1] = 'O' 
 
