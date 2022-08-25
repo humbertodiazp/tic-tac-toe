@@ -1,29 +1,18 @@
+# .lib/tic_tac_toe.rb
+
 class Board 
 
     MOVES = [1,2,3,4,5,6,7,8,9]
 
     def initialize(selection)
         @selection = selection
-        @player_options = player_options
         @player_1 = "Player One"
         @player_2 = "Player Two"
     end
-
     #possibly add all of the below puts to an array that prints out like the board layout below
     # then you can simply change the value of the array at a gien point to represent to x or o for tic/tac/toe
 
-    def game_board(selection, player)
-        player_options = MOVES
-        
-        
-        # determines where on the board to place an X or O based on player's decision 
-        # subtract 1 from selection to match array indexing 
-        # consider moving this logic outside the game_board method. May need a new method. 
-        selection == player_options[selection - 1] && player == player_1 ? 
-        player_options[selection - 1] = 'X' : player_options[selection - 1] = 'O' 
-
-
-
+    def game_board( )
         puts "#{player_options[0]}  |  #{player_options[1]}  |  #{player_options[2]}"
         puts "_______________"
         puts "#{player_options[3]}  |  #{player_options[4]}  |  #{player_options[5]}" 
@@ -33,7 +22,6 @@ class Board
         #  $#{player_options}|$#{player_options}|$#{player_options}"
     end
 
-    
 end
 
 
@@ -59,7 +47,13 @@ class NewGame < Board
         puts player_options
         selection = gets.chomp
     end
-
+    
+    def next_turn(selection, player)
+        player_options = MOVES
+        selection == player_options[selection - 1] && player == player_1 ? 
+        player_options[selection - 1] = 'X' : player_options[selection - 1] = 'O' 
+    end
+    
     board = Board.new(selection)
 
     puts board.game_board  
