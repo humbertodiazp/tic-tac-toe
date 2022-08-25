@@ -39,13 +39,13 @@ class NewGame < Board
        
         puts "Get ready to play TIC-TAC-TOE!!!"
 
-        puts player = player_1 ? "#{player_1} select where to place your X based on the board and options below" : 
-        "#{player_2} select where to place your O based on the board and options below"
+        puts player = player_1 ? "Player One select where to place your X based on the board and options below" : 
+        "player 2 select where to place your O based on the board and options below"
         puts '--------------------------'
         puts board.game_board 
         puts '--------------------------'
-        puts player_options
         selection = gets.chomp
+        player_options.push(selection)
     end
     
     def next_turn(selection, player)
@@ -53,7 +53,7 @@ class NewGame < Board
         selection == player_options[selection - 1] && player == player_1 ? 
         player_options[selection - 1] = 'X' : player_options[selection - 1] = 'O' 
     end
-    
+
     board = Board.new(selection)
 
     puts board.game_board  
