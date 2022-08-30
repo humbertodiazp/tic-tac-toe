@@ -31,7 +31,7 @@ class NewGame
 
     def initialize()
         @player = player
-        @selection
+        @selection = selection 
     end
 
     move_list = []
