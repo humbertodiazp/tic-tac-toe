@@ -25,7 +25,7 @@ end
 
 
 
-class NewGame < Board
+class NewGame  
     
     board = Board.new
 
@@ -70,3 +70,29 @@ tictactoe.start_turn(player_1)
 
 
 
+    def game_board(player, x )
+  
+
+        history = [1,2,3,4,5,6,7,8,9]
+        
+      
+      
+        y = x - 1 
+        
+       player == "player1" ? history[y] = 'x': history[y] = 'o'
+        
+        
+        
+          puts "#{history[0]}  |  #{history[1]}  |  #{history[2]}"
+          puts "_______________"
+        puts ''
+          puts "#{history[3]}  |  #{history[4]}  |  #{history[5]}" 
+          puts "_______________"
+          puts ''
+          puts "#{history[6]}  |  #{history[7]}  |  #{history[8]}"
+        
+      end
+        
+      
+      puts game_board('player2', 2)
+      puts game_board('player1',6)
