@@ -1,28 +1,28 @@
 # .lib/tic_tac_toe.rb
 
-class Board 
 
-    MOVES = [1,2,3,4,5,6,7,8,9]
+class Board
 
     def initialize(selection)
         @selection = selection
-        @player_1 = "Player One"
-        @player_2 = "Player Two"
+        @player = player
+        
     end
-    #possibly add all of the below puts to an array that prints out like the board layout below
-    # then you can simply change the value of the array at a gien point to represent to x or o for tic/tac/toe
+    #possibly add all of the below puts to an array that 
+    # prints out like the board layout below then you can simply
+    # change the value of the array at a gien point to represent to x or o for tic/tac/toe
 
-    def game_board( )
-        puts "#{player_options[0]}  |  #{player_options[1]}  |  #{player_options[2]}"
-        puts "_______________"
-        puts "#{player_options[3]}  |  #{player_options[4]}  |  #{player_options[5]}" 
-        puts "_______________"
-        puts "#{player_options[6]}  |  #{player_options[7]}  |  #{player_options[8]}" 
-        # puts "$#{player_options}|$#{player_options}|$#{player_options}
-        #  $#{player_options}|$#{player_options}|$#{player_options}"
-    end
+    squares = [1,2,3,4,5,6,7,8,9]
+
+    puts "#{squares[0]}  |  #{squares[1]}  |  #{squares[2]}"
+    puts "_______________"
+    puts "#{squares[3]}  |  #{squares[4]}  |  #{squares[5]}" 
+    puts "_______________"
+    puts "#{squares[6]}  |  #{squares[7]}  |  #{squares[8]}" 
+
 
 end
+
 
 
 
@@ -33,7 +33,7 @@ class NewGame < Board
         @selection = selection
     end
 
-    player_options = []
+    move_list = []
 
     def start_turn(player)
        
@@ -45,13 +45,13 @@ class NewGame < Board
         puts board.game_board 
         puts '--------------------------'
         selection = gets.chomp
-        player_options.push(selection)
+        movelist.push(selection)
     end
     
     def next_turn(selection, player)
-        player_options = MOVES
-        selection == player_options[selection - 1] && player == player_1 ? 
-        player_options[selection - 1] = 'X' : player_options[selection - 1] = 'O' 
+        squares = MOVES
+        selection == squares[selection - 1] && player == player_1 ? 
+        squares[selection - 1] = 'X' : squares[selection - 1] = 'O' 
     end
 
     board = Board.new(selection)
@@ -66,3 +66,6 @@ tictactoe.start_turn(player_1)
     # i.e. if player == player_1 --> the chosen spot will automatically be an X and vice versa
     
     # need method to add x or o to chosen location
+
+
+
