@@ -3,8 +3,7 @@
 
 class Board
 
-    def initialize(selection)
-        @selection = selection
+    def initialize()
         @player = player
         
     end
@@ -28,9 +27,11 @@ end
 
 class NewGame < Board
     
+    board = Board.new
 
     def initialize()
-        @selection = selection
+        @player = player
+        @selection
     end
 
     move_list = []
@@ -39,7 +40,7 @@ class NewGame < Board
        
         puts "Get ready to play TIC-TAC-TOE!!!"
 
-        puts player = player_1 ? "Player One select where to place your X based on the board and options below" : 
+        puts player == 'player_1' ? "Player One select where to place your X based on the board and options below" : 
         "player 2 select where to place your O based on the board and options below"
         puts '--------------------------'
         puts board.game_board 
