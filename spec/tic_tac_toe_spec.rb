@@ -1,17 +1,12 @@
 #spec/tic_tac_toe_spec.rb
-require './tic_tac_toe.rb' 
+require './tic_tac_toe' 
 
 describe Board do
-    describe "#game_board" do
-      it "returns a tic-tac-toe board with numbers 1-9" do
-        board = Board.new
-        expect(board.game_board(1, player_1)).to eql(
-          puts "X |  #{player_options[1]}  |  #{player_options[2]}"
-          puts "_______________"
-          puts "#{player_options[3]}  |  #{player_options[4]}  |  #{player_options[5]}" 
-          puts "_______________"
-          puts "#{player_options[6]}  |  #{player_options[7]}  |  #{player_options[8]}" 
-        )
+    describe "#next_turn" do
+      it "returns a tic-tac-toe board with player moves" do
+        board = Board.new()
+        expect(board.next_turn(3, 'x')).to eq(puts board.game_board(3, 'x'))
       end
   end
 end
+
