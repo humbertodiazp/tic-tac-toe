@@ -22,14 +22,17 @@ class Board
 
     def game_board(x, move)
 
-        squares.insert(x - 1, move)
-
         puts "#{squares[0]}  |  #{squares[1]}  |  #{squares[2]}"
         puts "_______________"
         puts "#{squares[3]}  |  #{squares[4]}  |  #{squares[5]}" 
         puts "_______________"
         puts "#{squares[6]}  |  #{squares[7]}  |  #{squares[8]}" 
     end
+
+    def next_turn(x, move)
+        @squares.insert(x - 1, move)
+        puts game_board
+      end
 end
 
 
