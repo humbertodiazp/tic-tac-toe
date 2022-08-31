@@ -13,19 +13,15 @@ class Board
 
 
     def game_board(x, move)
-        
+         
         squares.insert(x, move)
 
-        "#{squares[0]}  |  #{squares[1]}  |  #{squares[2]}"
-        "_______________"
-        "#{squares[3]}  |  #{squares[4]}  |  #{squares[5]}" 
-        "_______________"
-        "#{squares[6]}  |  #{squares[7]}  |  #{squares[8]}" 
+        puts "#{squares[0]}  |  #{squares[1]}  |  #{squares[2]}"
+        puts "_______________"
+        puts "#{squares[3]}  |  #{squares[4]}  |  #{squares[5]}" 
+        puts "_______________"
+        puts "#{squares[6]}  |  #{squares[7]}  |  #{squares[8]}" 
     end
-
-
-
-
 end
 
 
