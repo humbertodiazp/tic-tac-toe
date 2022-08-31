@@ -1,6 +1,14 @@
 # .lib/tic_tac_toe.rb
 
 
+puts "Get ready to play tic-tac-toe. Enter 1 through 9 "    
+"to indicate where on the board you want to move,"
+"and then also enter x or o. 
+I.e. (1, 'o') 
+
+"
+
+
 class Board
 
     attr_reader :game_board, :squares
