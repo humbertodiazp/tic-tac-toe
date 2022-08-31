@@ -3,21 +3,27 @@
 
 class Board
 
+    attr_reader :game_board, :squares
+
+
     def initialize()
-        @player = player
-        
+        @game_board = game_board
+        @squares = [] 
     end
-    #possibly add all of the below puts to an array that 
-    # prints out like the board layout below then you can simply
-    # change the value of the array at a gien point to represent to x or o for tic/tac/toe
 
-    squares = [1,2,3,4,5,6,7,8,9]
 
-    puts "#{squares[0]}  |  #{squares[1]}  |  #{squares[2]}"
-    puts "_______________"
-    puts "#{squares[3]}  |  #{squares[4]}  |  #{squares[5]}" 
-    puts "_______________"
-    puts "#{squares[6]}  |  #{squares[7]}  |  #{squares[8]}" 
+    def game_board(x, move)
+        
+        squares.insert(x, move)
+
+        "#{squares[0]}  |  #{squares[1]}  |  #{squares[2]}"
+        "_______________"
+        "#{squares[3]}  |  #{squares[4]}  |  #{squares[5]}" 
+        "_______________"
+        "#{squares[6]}  |  #{squares[7]}  |  #{squares[8]}" 
+    end
+
+
 
 
 end
@@ -29,7 +35,7 @@ class NewGame
     
     board = Board.new
 
-    def initialize()
+    def initialize( )
         @player = player
         @selection = selection 
     end
@@ -70,29 +76,5 @@ tictactoe.start_turn(player_1)
 
 
 
-    def game_board(player, x )
-  
-
-        history = [1,2,3,4,5,6,7,8,9]
-        
-      
-      
-        y = x - 1 
-        
-       player == "player1" ? history[y] = 'x': history[y] = 'o'
-        
-        
-        
-          puts "#{history[0]}  |  #{history[1]}  |  #{history[2]}"
-          puts "_______________"
-        puts ''
-          puts "#{history[3]}  |  #{history[4]}  |  #{history[5]}" 
-          puts "_______________"
-          puts ''
-          puts "#{history[6]}  |  #{history[7]}  |  #{history[8]}"
-        
-      end
-        
-      
-      puts game_board('player2', 2)
-      puts game_board('player1',6)
+   
+   
