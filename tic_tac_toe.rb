@@ -15,7 +15,7 @@ class Board
 
 
     def initialize()
-        @game_board = game_board
+       
         @squares = [] 
     end
 
