@@ -12,6 +12,12 @@ describe Board do
         board = Board.new()
         expect(@squares).to eq(['x'])
       end
+
+      describe "#game_over" do
+        it "declares a winner" do
+          board = Board.new()
+          
+        end
   end
 end
 
