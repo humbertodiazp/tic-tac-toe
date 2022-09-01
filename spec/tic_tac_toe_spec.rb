@@ -7,6 +7,11 @@ describe Board do
         board = Board.new()
         expect(board.next_turn(1, 'x')).to eq(board.game_board())
       end
+
+      it "inserts player move at specified index in @squares array" do
+        board = Board.new()
+        expect(@squares).to eq(['x'])
+      end
   end
 end
 
