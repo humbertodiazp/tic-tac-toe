@@ -20,7 +20,7 @@ class Board
     end
 
 
-    def game_board(x, move)
+    def game_board()
 
         puts "#{squares[0]}  |  #{squares[1]}  |  #{squares[2]}"
         puts "_______________"
@@ -33,7 +33,25 @@ class Board
         @squares.insert(x - 1, move)
         puts game_board
       end
+
+    def game_over 
+        # vertical wins
+        @squares[0] && @squares[1] && @squares[3] == 'x' | 'o' ? 'You Win!': ''
+        # diaganol wins 
+        @squares[2] && @squares[4] && @squares[6] ==  'x' | 'o' ? 'You Win!': ''
+        @squares[0] && @squares[4] && @squares[8] ==  'x' | 'o' ? 'You Win!': ''
+    #    horizontal wins
+        @squares[0] && @squares[4] && @squares[8] ==  'x' | 'o' ? 'You Win!': ''
+        @squares[0] && @squares[4] && @squares[8] ==  'x' | 'o' ? 'You Win!': ''
+    end
+
 end
+
+board = Board.new()
+
+board.next_turn(1, 'x')
+board.next_turn(2, 'x')
+board.next_turn(3, 'x')
 
 
 
