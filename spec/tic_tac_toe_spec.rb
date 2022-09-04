@@ -24,7 +24,12 @@ describe Board do
 
         it "delcares a winner" do
           expect (next_turn).to eq('You Win!')
-        end
+      end
+      context "index 3 throuhg 5 are x" do
+        let (:squares) { @squares = ['','','','x','x','x'] }
+
+        it "delcares a winner" do
+          expect (next_turn).to eq('You Win!')
     end
   end
 end
