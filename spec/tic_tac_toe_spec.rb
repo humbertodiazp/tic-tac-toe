@@ -18,6 +18,12 @@ describe Board do
       describe "#game_over" do
         it "declares a winner" do
           board = Board.new()
+
+      context "index 0 throuhg 2 are x" do
+        let (:squares) { @squares = ['x','x','x'] }
+
+        it "delcares a winner" do
+          expect (next_turn).to eq('You Win!')
         end
     end
   end
