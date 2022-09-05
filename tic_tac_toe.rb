@@ -22,11 +22,14 @@ class Board
 
     def game_board()
 
-        puts "#{squares[0]}  |  #{squares[1]}  |  #{squares[2]}"
-        puts "_______________"
-        puts "#{squares[3]}  |  #{squares[4]}  |  #{squares[5]}" 
-        puts "_______________"
-        puts "#{squares[6]}  |  #{squares[7]}  |  #{squares[8]}" 
+        puts <<-HEREDOC
+
+            #{squares[0]}  |  #{squares[1]}  |  #{squares[2]}
+            ---+---+---
+            #{squares[3]}  |  #{squares[4]}  |  #{squares[5]}
+            ---+---+---
+            #{squares[6]}  |  #{squares[7]}  |  #{squares[8]}
+        HEREDOC
     end
 
     def next_turn(x, move)
